@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://restaurajardins.netlify.app/</loc>
+    <loc>restaurajardins.netlify.app/</loc>
     <lastmod>2025-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
   <!-- Exemplo de página adicional (adicione outras aqui) -->
   <!--
   <url>
-    <loc>https://restaurajardins.netlify.app/servicos</loc>
+    <loc>restaurajardins.netlify.app/servicos</loc>
     <lastmod>2025-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
