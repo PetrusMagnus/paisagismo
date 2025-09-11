@@ -3,175 +3,1096 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L&R Plantas e Paisagismo - Luiz Ribeiro | Transformando Espaços desde 2015</title>
-    <meta name="description" content="Fundada por Luiz Ribeiro, 10 anos de excelência em paisagismo para hotéis, igrejas, empresas e residências. Projetos, manutenção e venda de plantas.">
-    <link rel="stylesheet" href="css/style.css">
+    <title>L&R Plantas e Paisagismo | Transformando espaços no DF desde 2015</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variáveis de cores e estilos */
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #7cb342;
+            --accent-color: #ffa000;
+            --light-color: #f1f8e9;
+            --dark-color: #1b5e20;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+        
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-accent:hover {
+            background-color: #f57c00;
+        }
+        
+        /* Header e Navegação */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/hero-bg.jpg') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 150px 0 100px;
+            margin-top: 80px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Serviços */
+        .services {
+            background-color: var(--light-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+            background-color: #f1f8e9; /* Cor de fundo provisória caso a imagem não carregue */
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        /* Sobre */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text {
+            padding-right: 20px;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background-color: #f1f8e9; /* Cor de fundo provisória caso a imagem não carregue */
+        }
+        
+        /* Portfólio */
+        .portfolio {
+            background-color: var(--light-color);
+        }
+        
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            margin: 5px;
+            background-color: var(--white);
+            border: 1px solid var(--primary-color);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .portfolio-item {
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+            background-color: #f1f8e9; /* Cor de fundo provisória caso a imagem não carregue */
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(46, 125, 50, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: 20px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        /* Depoimentos */
+        .testimonials-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            text-align: center;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        /* Contato */
+        .contact {
+            background-color: var(--light-color);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        .contact-details h3 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-message {
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                height: calc(100vh - 80px);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 120px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header e Navegação -->
     <header>
-        <div class="logo">
-            <img src="assets/logo-lr.png" alt="L&R Plantas e Paisagismo" width="150">
+        <div class="container header-container">
+            <div class="logo">
+                <!-- LOGOMARCA -->
+                <a href="#inicio"><img src="assets/logo-lr.png" alt="L&R Plantas e Paisagismo"></a>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#portfolio">Portfólio</a>
-            <a href="#contato">Contato</a>
-        </nav>
     </header>
 
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Paisagismo com Excelência</h1>
-            <p>Transformando espaços no DF desde 2015</p>
-            <a href="https://wa.me/556199958196" class="btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> Orçamento via WhatsApp
-            </a>
+        <div class="container">
+            <h1>L&R Plantas e Paisagismo</h1>
+            <p>Paisagismo com Excelência. Transformando espaços no DF desde 2015.</p>
+            <a href="https://wa.me/556199958196" target="_blank" class="btn btn-accent">Solicitar Orçamento</a>
         </div>
     </section>
 
-    <section id="sobre" class="sobre">
-        <div class="sobre-content">
-            <div class="sobre-texto">
-                <h2>10 Anos Criando Ambientes Excepcionais</h2>
-                <p>Fundada por <strong>Luiz Ribeiro</strong>, a L&R Plantas e Paisagismo nasceu da paixão por transformar espaços através da natureza. Com mais de uma década de experiência, Luiz atua pessoalmente como paisagista e jardineiro-chefe em todos os projetos, garantindo qualidade e atenção aos detalhes.</p>
-                <p>Especialistas em projetos para hotéis, paróquias, seminários, residências e empresas, nossa equipe combina conhecimento técnico e sensibilidade artística para criar ambientes que encantam.</p>
-            </div>
-            <div class="sobre-imagem">
-                <div class="dono-card">
-                    <div class="dono-img-placeholder">
-                        <i class="fas fa-user-tie"></i>
+    <!-- Serviços -->
+    <section id="servicos" class="services">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/servico-projetos.jpg" alt="Projetos Paisagísticos">
                     </div>
-                    <h3>Luiz Ribeiro</h3>
-                    <p>Fundador e Paisagista Chefe</p>
-                    <p>Atuando no ramo desde 2015</p>
+                    <div class="service-content">
+                        <h3>Projetos Paisagísticos</h3>
+                        <p>Criação de jardins personalizados para residências, empresas e instituições.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/servico-manutencao.jpg" alt="Manutenção de Jardins">
+                    </div>
+                    <div class="service-content">
+                        <h3>Manutenção de Jardins</h3>
+                        <p>Cuidados especializados para manter seu jardim sempre bonito e saudável.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/servico-podas.jpg" alt="Podas Profissionais">
+                    </div>
+                    <div class="service-content">
+                        <h3>Podas Profissionais</h3>
+                        <p>Podas seguras em árvores de até 5m de altura, realizadas por equipe especializada.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/servico-plantas.jpg" alt="Venda de Plantas">
+                    </div>
+                    <div class="service-content">
+                        <h3>Venda de Plantas</h3>
+                        <p>Plantas ornamentais, substratos e insumos de qualidade para seu jardim.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/servico-pragas.jpg" alt="Controle de Pragas">
+                    </div>
+                    <div class="service-content">
+                        <h3>Controle de Pragas</h3>
+                        <p>Tratamento especializado com fungicidas e herbicidas para manter suas plantas saudáveis.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/servico-adubacao.jpg" alt="Adubação">
+                    </div>
+                    <div class="service-content">
+                        <h3>Adubação</h3>
+                        <p>Nutrição adequada para suas plantas crescerem fortes e saudáveis.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="sobre">
-        <h2>10 Anos Criando Ambientes Excepcionais</h2>
-        <p>Especialistas em projetos paisagísticos para hotéis, paróquias, seminários, residências e empresas. Nossa equipe combina conhecimento técnico e sensibilidade artística para criar espaços que encantam.</p>
-    </section>
-
-    <section id="servicos" class="servicos">
-        <h2>Nossos Serviços</h2>
-        <div class="servicos-grid">
-            <div class="servico">
-                <i class="fas fa-pencil-ruler"></i>
-                <h3>Projetos Paisagísticos</h3>
-                <p>Criação de jardins personalizados para todos os espaços</p>
-            </div>
-            <div class="servico">
-                <i class="fas fa-leaf"></i>
-                <h3>Manutenção de Jardins</h3>
-                <p>Cuidados especializados para manter seu jardim sempre bonito</p>
-            </div>
-            <div class="servico">
-                <i class="fas fa-tree"></i>
-                <h3>Podas Profissionais</h3>
-                <p>Podas seguras em árvores de até 5 metros de altura</p>
-            </div>
-            <div class="servico">
-                <i class="fas fa-shopping-basket"></i>
-                <h3>Venda de Plantas</h3>
-                <p>Plantas ornamentais, substratos e insumos de qualidade</p>
-            </div>
-            <div class="servico">
-                <i class="fas fa-spray-can"></i>
-                <h3>Controle de Pragas</h3>
-                <p>Tratamento especializado com fungicidas e herbicidas</p>
-            </div>
-            <div class="servico">
-                <i class="fas fa-seedling"></i>
-                <h3>Adubação</h3>
-                <p>Nutrição adequada para plantas saudáveis e vigorosas</p>
+    <!-- Sobre -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2>Sobre Nós</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>A L&R Plantas e Paisagismo atua desde 2015 transformando espaços através da natureza, com excelência e atenção aos detalhes. Com mais de 10 anos de experiência, nosso fundador Luiz Ribeiro atua pessoalmente como paisagista e jardineiro-chefe em todos os projetos.</p>
+                    <p>Nossa missão é criar ambientes que integrem harmoniosamente a natureza ao espaço construído, proporcionando bem-estar e beleza para nossos clientes. Acreditamos que cada projeto é único и merece cuidado especial desde a concepção até a execução e manutenção.</p>
+                    <p>Atuamos em todo o Distrito Federal e entorno, atendendo residências, hotéis, igrejas, seminários e empresas com a mesma dedicação e profissionalismo que nos tornaram referência em paisagismo.</p>
+                </div>
+                <div class="about-img">
+                    <img src="assets/sobre-nos.jpg" alt="Luiz Ribeiro - Fundador da L&R Plantas e Paisagismo">
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Portfólio -->
     <section id="portfolio" class="portfolio">
-        <h2>Nosso Portfólio</h2>
-        <div class="filtros">
-            <button class="filtro-btn active" data-categoria="todos">Todos</button>
-            <button class="filtro-btn" data-categoria="projetos">Projetos</button>
-            <button class="filtro-btn" data-categoria="serviço">Execução</button>
-        </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-item" data-categoria="projetos">
-                <img src="assets/projeto1.jpg" alt="Projeto Paroquial">
+        <div class="container">
+            <h2>Nosso Portfólio</h2>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="projetos">Projetos</button>
+                <button class="filter-btn" data-filter="execucoes">Execuções</button>
+                <button class="filter-btn" data-filter="residencial">Residencial</button>
+                <button class="filter-btn" data-filter="comercial">Comercial</button>
+                <button class="filter-btn" data-filter="religioso">Religioso</button>
             </div>
-            <div class="portfolio-item" data-categoria="serviço">
-                <img src="assets/serviço1.jpg" alt="Execução do Projeto Paroquial">
-            </div>
-            <div class="portfolio-item" data-categoria="projetos">
-                <img src="assets/projeto2.jpg" alt="Projeto Paroquial">
-            </div>
-            <div class="portfolio-item" data-categoria="serviço">
-                <img src="assets/serviço2.jpg" alt="Paisagismo de Entrada do Hotel">
-            </div>
-            <div class="portfolio-item" data-categoria="projetos">
-                <img src="assets/projeto3.jpg" alt="Projeto Paroquial">
-            </div>
-            <div class="portfolio-item" data-categoria="serviço">
-                <img src="assets/serviço3.jpg" alt="Área Verde duma Residência">
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="projetos residencial">
+                    <img src="assets/projeto1.jpg" alt="Projeto Residencial">
+                    <div class="portfolio-overlay">
+                        <h3>Jardim Residencial</h3>
+                        <p>Projeto completo para residência no Lago Sul</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="projetos comercial">
+                    <img src="assets/projeto2.jpg" alt="Projeto Comercial">
+                    <div class="portfolio-overlay">
+                        <h3>Jardim Hotel</h3>
+                        <p>Área de lazer para hotel em Brasília</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="projetos religioso">
+                    <img src="assets/projeto3.jpg" alt="Projeto Religioso">
+                    <div class="portfolio-overlay">
+                        <h3>Jardim Paroquial</h3>
+                        <p>Espaço de contemplação para igreja</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="execucoes residencial">
+                    <img src="assets/servico1.jpg" alt="Execução de Jardim">
+                    <div class="portfolio-overlay">
+                        <h3>Manutenção Residencial</h3>
+                        <p>Serviço de poda e manutenção em residência</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="execucoes comercial">
+                    <img src="assets/servico2.jpg" alt="Execução Comercial">
+                    <div class="portfolio-overlay">
+                        <h3>Jardim Corporativo</h3>
+                        <p>Implantação de jardim em empresa</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="execucoes religioso">
+                    <img src="assets/servico3.jpg" alt="Execução Religiosa">
+                    <div class="portfolio-overlay">
+                        <h3>Área Verde Religiosa</h3>
+                        <p>Manutenção de jardim em seminário</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="depoimentos">
-        <h2>O que dizem nossos clientes</h2>
-        <div class="depoimentos-grid">
-            <div class="depoimento">
-                <div class="depoimento-texto">
-                    "Contratamos a L&R para o paisagismo de nossa casa e o resultado superou todas as expectativas. O jardim se tornou nossa melhor vista na casa!"
+    <!-- Depoimentos -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Contratei os serviços da L&R para transformar o jardim da minha casa e fiquei impressionado com a qualidade do trabalho. O Luiz foi extremamente atencioso e dedicado, e o resultado superou todas as minhas expectativas."</p>
+                    <p class="testimonial-author">Fernanda Andrade</p>
+                    <p class="testimonial-role">Paranoá - Residencial</p>
                 </div>
-                <div class="depoimento-autor">
-                    <strong>Fernanda Andrade</strong><br>
-                    Paranoá
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"A Paróquia estava precisando revitalizar suas áreas verdes e a L&R fez um trabalho excepcional. Profissionalismo, pontualidade e um resultado final maravilhoso que todos os fiéis comentam."</p>
+                    <p class="testimonial-author">Padre Miguel</p>
+                    <p class="testimonial-role">Paróquia - Projeto religioso</p>
                 </div>
-            </div>
-            <div class="depoimento">
-                <div class="depoimento-texto">
-                    "Profissionalismo incomparável! Fizeram o jardim da nossa paróquia e todos os fiéis amaram o novo ambiente de contemplação."
-                </div>
-                <div class="depoimento-autor">
-                    <strong>Padre Miguel</strong><br>
-                    Paróquia
-                </div>
-            </div>
-            <div class="depoimento">
-                <div class="depoimento-texto">
-                    "Serviço impecável! Manutenção pontual e meu jardim nunca esteve tão bonito. Recomendo a todos que querem qualidade."
-                </div>
-                <div class="depoimento-autor">
-                    <strong>Carlos Eduardo</strong><br>
-                    Residencial Lago Sul
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"Já utilizo os serviços de manutenção da L&R há mais de 3 anos e sempre foram impecáveis. Meu jardim está sempre perfeito e bem cuidado. Recomendo sem dúvidas!"</p>
+                    <p class="testimonial-author">Carlos Eduardo</p>
+                    <p class="testimonial-role">Lago Sul - Serviço de manutenção</p>
                 </div>
             </div>
         </div>
     </section>
 
-<footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>L&R Plantas e Paisagismo</h3>
-                <p>Fundada e dirigida por Luiz Ribeiro</p>
-                <p>Paisagista profissional com 10+ anos de experiência</p>
-            </div>
-            <div class="footer-contato">
-                <p><i class="fab fa-whatsapp"></i> +55 61 9995-8196</p>
-                <p><i class="fas fa-envelope"></i> restaurajardins068@gmail.com</p>
+    <!-- Contato -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Área de Atuação</h3>
+                            <p>Distrito Federal e entorno</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Telefone/WhatsApp</h3>
+                            <p><a href="https://wa.me/556199958196" target="_blank">+55 61 9995-8196</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>E-mail</h3>
+                            <p><a href="mailto:restaurajardins068@gmail.com">restaurajardins068@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Horário de Atendimento</h3>
+                            <p>Segunda a Sábado: 8h às 18h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Como funciona</h3>
+                            <p>Preencha o formulário ao lado e entraremos em contato em até 24 horas. Ou se preferir, utilize nossos contatos diretos.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="form-contato">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo *</label>
+                            <input type="text" id="nome" name="nome" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefone">Telefone/WhatsApp *</label>
+                            <input type="tel" id="telefone" name="telefone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="servico">Serviço de Interesse *</label>
+                            <select id="servico" name="servico" class="form-control" required>
+                                <option value="">Selecione um serviço</option>
+                                <option value="projeto">Projeto Paisagístico</option>
+                                <option value="manutencao">Manutenção de Jardins</option>
+                                <option value="podas">Podas Profissionais</option>
+                                <option value="plantas">Venda de Plantas</option>
+                                <option value="pragas">Controle de Pragas</option>
+                                <option value="adubacao">Adubação</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control" required placeholder="Descreva brevemente sua necessidade..."></textarea>
+                        </div>
+                        
+                        <div id="form-message" class="form-message"></div>
+                        
+                        <button type="submit" class="btn" id="submit-btn">
+                            <span id="btn-text">Enviar Mensagem</span>
+                            <div id="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Enviando...
+                            </div>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="footer-copyright">
-            <p>© 2015-2025 L&R Plantas e Paisagismo - Todos os direitos reservados</p>
-            <p>Atendemos em todo o Distrito Federal e entorno</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="assets/logo-lr.png" alt="L&R Plantas e Paisagismo">
+                    </div>
+                    <p>Transformando espaços através da natureza, com excelência e atenção aos detalhes desde 2015.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/556199958196" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#portfolio">Portfólio</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-phone-alt"></i> <a href="https://wa.me/556199958196" target="_blank">+55 61 9995-8196</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:restaurajardins068@gmail.com">restaurajardins068@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Distrito Federal e entorno</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 L&R Plantas e Paisagismo. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // Menu Mobile
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Fechar menu ao clicar em um link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Filtro do Portfólio
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove a classe active de todos os botões
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Adiciona a classe active ao botão clicado
+                button.classList.add('active');
+                
+                // Obtém o filtro
+                const filter = button.getAttribute('data-filter');
+                
+                // Mostra ou esconde os itens com base no filtro
+                portfolioItems.forEach(item => {
+                    if (filter === 'all') {
+                        item.style.display = 'block';
+                    } else {
+                        const categories = item.getAttribute('data-category').split(' ');
+                        if (categories.includes(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Formulário de Contato - Agora funcional
+        const contactForm = document.getElementById('form-contato');
+        const formMessage = document.getElementById('form-message');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnLoading = document.getElementById('btn-loading');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Mostrar estado de carregamento
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'block';
+                submitBtn.disabled = true;
+                
+                // Coletar dados do formulário
+                const formData = {
+                    nome: document.getElementById('nome').value,
+                    email: document.getElementById('email').value,
+                    telefone: document.getElementById('telefone').value,
+                    servico: document.getElementById('servico').value,
+                    mensagem: document.getElementById('mensagem').value,
+                    data: new Date().toLocaleString('pt-BR')
+                };
+                
+                try {
+                    // Aqui você normalmente faria uma requisição para um servidor
+                    // Simulando uma requisição com timeout
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    // Simular sucesso no envio (em um caso real, isso viria da resposta do servidor)
+                    const success = true; // Simulando envio bem-sucedido
+                    
+                    if (success) {
+                        // Mensagem de sucesso
+                        formMessage.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em até 24 horas.';
+                        formMessage.classList.remove('error');
+                        formMessage.classList.add('success');
+                        
+                        // Limpar formulário
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Falha no envio');
+                    }
+                } catch (error) {
+                    // Mensagem de erro
+                    formMessage.textContent = 'Erro ao enviar mensagem. Por favor, tente novamente ou entre em contato diretamente por WhatsApp.';
+                    formMessage.classList.remove('success');
+                    formMessage.classList.add('error');
+                } finally {
+                    // Restaurar estado normal do botão
+                    btnText.style.display = 'block';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                    
+                    // Rolagem suave para mostrar a mensagem
+                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        }
+        
+        // Validação em tempo real
+        const inputs = document.querySelectorAll('.form-control');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '' && this.hasAttribute('required')) {
+                    this.style.borderColor = '#dc3545';
+                } else {
+                    this.style.borderColor = '#ddd';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
