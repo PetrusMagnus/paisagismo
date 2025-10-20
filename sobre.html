@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L&R Plantas e Paisagismo | Transformando espaços no DF desde 2015</title>
+    <title>Sobre Nós | L&R Plantas e Paisagismo</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -183,62 +183,119 @@
             cursor: pointer;
         }
         
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/hero-bg.jpg') no-repeat center center/cover;
+        /* Hero Sobre */
+        .hero-sobre {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/sobre-nos.jpg') no-repeat center center/cover;
             color: var(--white);
             text-align: center;
             padding: 150px 0 100px;
             margin-top: 80px;
         }
         
-        .hero h1 {
+        .hero-sobre h1 {
             font-size: 3rem;
             color: var(--white);
             margin-bottom: 20px;
         }
         
-        .hero p {
+        .hero-sobre p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 30px;
         }
         
-        /* Destaques */
-        .highlights {
+        /* About Content */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text {
+            padding-right: 20px;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Valores */
+        .valores {
             background-color: var(--light-color);
         }
         
-        .highlights-grid {
+        .valores-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
         
-        .highlight-card {
+        .valor-card {
             background-color: var(--white);
+            padding: 30px;
             border-radius: 8px;
-            overflow: hidden;
+            text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
-            text-align: center;
-            padding: 30px;
         }
         
-        .highlight-card:hover {
-            transform: translateY(-10px);
+        .valor-card:hover {
+            transform: translateY(-5px);
         }
         
-        .highlight-icon {
-            font-size: 3rem;
+        .valor-icon {
+            font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 20px;
         }
         
-        .highlight-card h3 {
+        /* Equipe */
+        .equipe {
+            text-align: center;
+        }
+        
+        .equipe-member {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .member-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 5px solid var(--light-color);
+        }
+        
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-info h3 {
             color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .member-role {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 20px;
         }
         
         /* CTA Section */
@@ -366,7 +423,7 @@
                 font-size: 2rem;
             }
             
-            .hero h1 {
+            .hero-sobre h1 {
                 font-size: 2.5rem;
             }
         }
@@ -411,16 +468,25 @@
                 display: block;
             }
             
-            .hero {
+            .hero-sobre {
                 padding: 120px 0 80px;
             }
             
-            .hero h1 {
+            .hero-sobre h1 {
                 font-size: 2rem;
             }
             
-            .hero p {
+            .hero-sobre p {
                 font-size: 1rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 30px;
             }
         }
     </style>
@@ -461,44 +527,86 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero-sobre">
         <div class="container">
-            <h1>L&R Plantas e Paisagismo</h1>
-            <p>Paisagismo com Excelência. Transformando espaços no DF desde 2015.</p>
-            <a href="https://wa.me/556199958196" target="_blank" class="btn btn-accent">Solicitar Orçamento</a>
+            <h1>Nossa História</h1>
+            <p>Conheça a trajetória da L&R Plantas e Paisagismo no Distrito Federal</p>
+            <a href="#sobre" class="btn btn-accent">Conheça Nossa História</a>
         </div>
     </section>
 
-    <!-- Destaques -->
-    <section class="highlights">
+    <section id="sobre" class="about">
         <div class="container">
-            <h2>Nossos Destaques</h2>
-            <div class="highlights-grid">
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-seedling"></i>
+            <h2>Sobre a L&R Plantas e Paisagismo</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>A <strong>L&R Plantas e Paisagismo</strong> atua desde 2015 transformando espaços através da natureza, com excelência e atenção aos detalhes. Com mais de 10 anos de experiência, nosso fundador <strong>Luiz Ribeiro</strong> atua pessoalmente como paisagista e jardineiro-chefe em todos os projetos.</p>
+                    
+                    <p>Nossa missão é criar ambientes que integrem harmoniosamente a natureza ao espaço construído, proporcionando bem-estar e beleza para nossos clientes. Acreditamos que cada projeto é único e merece cuidado especial desde a concepção até a execução e manutenção.</p>
+                    
+                    <p>Começamos com pequenos serviços de jardinagem e, através do trabalho dedicado e da qualidade dos serviços prestados, conquistamos a confiança de clientes em todo o Distrito Federal. Hoje, atendemos desde residências até grandes empreendimentos comerciais e instituições religiosas.</p>
+                    
+                    <p>Atuamos em todo o Distrito Federal e entorno, atendendo residências, hotéis, igrejas, seminários e empresas com a mesma dedicação e profissionalismo que nos tornaram referência em paisagismo.</p>
+                    
+                    <a href="contato.html" class="btn">Entre em Contato</a>
+                </div>
+                <div class="about-img">
+                    <img src="assets/sobre-nos.jpg" alt="Luiz Ribeiro - Fundador da L&R Plantas e Paisagismo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="valores">
+        <div class="container">
+            <h2>Nossos Valores</h2>
+            <div class="valores-grid">
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-leaf"></i>
                     </div>
-                    <h3>Serviços Especializados</h3>
-                    <p>Projetos paisagísticos, manutenção de jardins, podas profissionais e muito mais.</p>
-                    <a href="servicos.html" class="btn">Conheça nossos serviços</a>
+                    <h3>Sustentabilidade</h3>
+                    <p>Priorizamos práticas ecológicas e uso responsável dos recursos naturais em todos os nossos projetos.</p>
                 </div>
                 
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-images"></i>
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-award"></i>
                     </div>
-                    <h3>Portfólio</h3>
-                    <p>Confira nossos trabalhos realizados em residências, empresas e instituições.</p>
-                    <a href="portfolio.html" class="btn">Ver portfólio</a>
+                    <h3>Qualidade</h3>
+                    <p>Comprometemo-nos com a excelência em cada detalhe, desde o projeto até a execução final.</p>
                 </div>
                 
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-history"></i>
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3>Nossa História</h3>
-                    <p>Mais de 10 anos de experiência transformando espaços através da natureza.</p>
-                    <a href="sobre.html" class="btn">Conheça nossa história</a>
+                    <h3>Compromisso</h3>
+                    <p>Valorizamos a confiança dos nossos clientes e honramos cada compromisso assumido.</p>
+                </div>
+                
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Paixão</h3>
+                    <p>Amamos o que fazemos e acreditamos no poder transformador da natureza nos espaços.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="equipe">
+        <div class="container">
+            <h2>Nossa Equipe</h2>
+            <div class="equipe-member">
+                <div class="member-photo">
+                    <img src="assets/sobre-nos.jpg" alt="Luiz Ribeiro">
+                </div>
+                <div class="member-info">
+                    <h3>Luiz Ribeiro</h3>
+                    <p class="member-role">Fundador e Paisagista Chefe</p>
+                    <p>Com mais de 10 anos de experiência em paisagismo, Luiz dedica-se pessoalmente a cada projeto, garantindo que cada espaço seja transformado com a máxima qualidade e atenção aos detalhes. Sua paixão pela natureza e conhecimento técnico fazem da L&R uma referência no DF.</p>
                 </div>
             </div>
         </div>
@@ -508,8 +616,8 @@
     <section class="cta">
         <div class="container">
             <h2>Pronto para Transformar seu Espaço?</h2>
-            <p>Entre em contato conosco e solicite um orçamento sem compromisso. Estamos prontos para tornar seu jardim dos sonhos em realidade.</p>
-            <a href="contato.html" class="btn btn-accent">Entre em Contato</a>
+            <p>Entre em contato conosco e vamos criar o jardim dos seus sonhos!</p>
+            <a href="contato.html" class="btn btn-accent">Solicitar Orçamento</a>
         </div>
     </section>
 

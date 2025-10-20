@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L&R Plantas e Paisagismo | Transformando espaços no DF desde 2015</title>
+    <title>Portfólio | L&R Plantas e Paisagismo</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -183,62 +183,101 @@
             cursor: pointer;
         }
         
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/hero-bg.jpg') no-repeat center center/cover;
+        /* Hero Portfolio */
+        .hero-portfolio {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/projeto1.jpg') no-repeat center center/cover;
             color: var(--white);
             text-align: center;
             padding: 150px 0 100px;
             margin-top: 80px;
         }
         
-        .hero h1 {
+        .hero-portfolio h1 {
             font-size: 3rem;
             color: var(--white);
             margin-bottom: 20px;
         }
         
-        .hero p {
+        .hero-portfolio p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 30px;
         }
         
-        /* Destaques */
-        .highlights {
-            background-color: var(--light-color);
+        /* Portfolio Filters */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
         }
         
-        .highlights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .highlight-card {
+        .filter-btn {
+            padding: 8px 20px;
+            margin: 5px;
             background-color: var(--white);
+            border: 1px solid var(--primary-color);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .portfolio-item {
             border-radius: 8px;
             overflow: hidden;
+            position: relative;
+            height: 300px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(46, 125, 50, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: 20px;
             text-align: center;
-            padding: 30px;
+            color: var(--white);
         }
         
-        .highlight-card:hover {
-            transform: translateY(-10px);
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
         }
         
-        .highlight-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .highlight-card h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+        .portfolio-overlay h3 {
+            color: var(--white);
+            margin-bottom: 10px;
         }
         
         /* CTA Section */
@@ -366,7 +405,7 @@
                 font-size: 2rem;
             }
             
-            .hero h1 {
+            .hero-portfolio h1 {
                 font-size: 2.5rem;
             }
         }
@@ -411,16 +450,20 @@
                 display: block;
             }
             
-            .hero {
+            .hero-portfolio {
                 padding: 120px 0 80px;
             }
             
-            .hero h1 {
+            .hero-portfolio h1 {
                 font-size: 2rem;
             }
             
-            .hero p {
+            .hero-portfolio p {
                 font-size: 1rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -461,44 +504,131 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero-portfolio">
         <div class="container">
-            <h1>L&R Plantas e Paisagismo</h1>
-            <p>Paisagismo com Excelência. Transformando espaços no DF desde 2015.</p>
-            <a href="https://wa.me/556199958196" target="_blank" class="btn btn-accent">Solicitar Orçamento</a>
+            <h1>Nosso Portfólio</h1>
+            <p>Conheça alguns dos nossos trabalhos realizados no Distrito Federal</p>
+            <a href="#portfolio" class="btn btn-accent">Ver Projetos</a>
         </div>
     </section>
 
-    <!-- Destaques -->
-    <section class="highlights">
+    <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2>Nossos Destaques</h2>
-            <div class="highlights-grid">
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-seedling"></i>
+            <h2>Nossos Projetos</h2>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="projetos">Projetos</button>
+                <button class="filter-btn" data-filter="execucoes">Execuções</button>
+                <button class="filter-btn" data-filter="residencial">Residencial</button>
+                <button class="filter-btn" data-filter="comercial">Comercial</button>
+                <button class="filter-btn" data-filter="religioso">Religioso</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Projetos -->
+                <div class="portfolio-item" data-category="projetos comercial">
+                    <img src="assets/projeto4.jpg" alt="Projeto Hotel Bonaparte">
+                    <div class="portfolio-overlay">
+                        <h3>Projeto Paisagístico</h3>
+                        <p>Hotel Bonaparte - Brasília, DF</p>
+                        <p>Planta para execução do jardim principal</p>
                     </div>
-                    <h3>Serviços Especializados</h3>
-                    <p>Projetos paisagísticos, manutenção de jardins, podas profissionais e muito mais.</p>
-                    <a href="servicos.html" class="btn">Conheça nossos serviços</a>
                 </div>
                 
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-images"></i>
+                <!-- Hotel Bonaparte - Execuções -->
+                <div class="portfolio-item" data-category="execucoes comercial">
+                    <img src="assets/hotel.jpg" alt="Hotel Bonaparte">
+                    <div class="portfolio-overlay">
+                        <h3>Jardim Comercial</h3>
+                        <p>Hotel Bonaparte - Brasília, DF</p>
+                        <p>Execução do projeto paisagístico</p>
                     </div>
-                    <h3>Portfólio</h3>
-                    <p>Confira nossos trabalhos realizados em residências, empresas e instituições.</p>
-                    <a href="portfolio.html" class="btn">Ver portfólio</a>
                 </div>
                 
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-history"></i>
+                <div class="portfolio-item" data-category="execucoes comercial">
+                    <img src="assets/hotel2.jpg" alt="Hotel Bonaparte">
+                    <div class="portfolio-overlay">
+                        <h3>Área de Entrada</h3>
+                        <p>Hotel Bonaparte - Brasília, DF</p>
+                        <p>Jardim da entrada principal</p>
                     </div>
-                    <h3>Nossa História</h3>
-                    <p>Mais de 10 anos de experiência transformando espaços através da natureza.</p>
-                    <a href="sobre.html" class="btn">Conheça nossa história</a>
+                </div>
+                
+                <div class="portfolio-item" data-category="execucoes comercial">
+                    <img src="assets/hotel3.jpg" alt="Hotel Bonaparte">
+                    <div class="portfolio-overlay">
+                        <h3>Área de Lazer</h3>
+                        <p>Hotel Bonaparte - Brasília, DF</p>
+                        <p>Espaço de convivência dos hóspedes</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="execucoes comercial">
+                    <img src="assets/hotel4.jpg" alt="Hotel Bonaparte">
+                    <div class="portfolio-overlay">
+                        <h3>Jardim Interno</h3>
+                        <p>Hotel Bonaparte - Brasília, DF</p>
+                        <p>Área verde interna do hotel</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="execucoes comercial">
+                    <img src="assets/hotel5.jpg" alt="Hotel Bonaparte">
+                    <div class="portfolio-overlay">
+                        <h3>Paisagismo Completo</h3>
+                        <p>Hotel Bonaparte - Brasília, DF</p>
+                        <p>Visão geral do projeto executado</p>
+                    </div>
+                </div>
+                
+                <!-- Projetos Residenciais Existentes -->
+                <div class="portfolio-item" data-category="execucoes residencial">
+                    <img src="assets/projeto1.jpg" alt="Projeto Residencial">
+                    <div class="portfolio-overlay">
+                        <h3>Jardim Residencial</h3>
+                        <p>Residência da Srª. Jaqueline - Guará, DF</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="execucoes residencial">
+                    <img src="assets/projeto2.jpg" alt="Projeto Residencial">
+                    <div class="portfolio-overlay">
+                        <h3>Jardim Residencial</h3>
+                        <p>Residência da Srª. Jaqueline - Guará, DF</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="execucoes residencial">
+                    <img src="assets/projeto3.jpg" alt="Projeto Residencial">
+                    <div class="portfolio-overlay">
+                        <h3>Jardim Residencial</h3>
+                        <p>Residência da Srª. Jaqueline - Guará, DF</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="execucoes religioso">
+                    <img src="assets/servico1.jpg" alt="Execução de Jardim">
+                    <div class="portfolio-overlay">
+                        <h3>Manutenção Jardim</h3>
+                        <p>Paróquia Nossa Senhora da Esperança - Asa Norte, DF</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="execucoes residencial">
+                    <img src="assets/servico2.jpg" alt="Execução Residencial">
+                    <div class="portfolio-overlay">
+                        <h3>Jardim Residencial</h3>
+                        <p>Residência da Srª. Cláudia - Grande Colorado, DF</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="execucoes residencial">
+                    <img src="assets/servico3.jpg" alt="Execução Residencial">
+                    <div class="portfolio-overlay">
+                        <h3>Área de Lazer</h3>
+                        <p>Residência da Srª. Janay Leandro</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -507,9 +637,9 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Pronto para Transformar seu Espaço?</h2>
-            <p>Entre em contato conosco e solicite um orçamento sem compromisso. Estamos prontos para tornar seu jardim dos sonhos em realidade.</p>
-            <a href="contato.html" class="btn btn-accent">Entre em Contato</a>
+            <h2>Gostou dos Nossos Trabalhos?</h2>
+            <p>Entre em contato e vamos transformar seu espaço também!</p>
+            <a href="contato.html" class="btn btn-accent">Solicitar Orçamento</a>
         </div>
     </section>
 
@@ -574,6 +704,37 @@
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
+            });
+        });
+        
+        // Filtro do Portfólio
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove a classe active de todos os botões
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Adiciona a classe active ao botão clicado
+                button.classList.add('active');
+                
+                // Obtém o filtro
+                const filter = button.getAttribute('data-filter');
+                
+                // Mostra ou esconde os itens com base no filtro
+                portfolioItems.forEach(item => {
+                    if (filter === 'all') {
+                        item.style.display = 'block';
+                    } else {
+                        const categories = item.getAttribute('data-category').split(' ');
+                        if (categories.includes(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+                });
             });
         });
     </script>

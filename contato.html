@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L&R Plantas e Paisagismo | Transformando espaços no DF desde 2015</title>
+    <title>Contato | L&R Plantas e Paisagismo</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -183,83 +183,151 @@
             cursor: pointer;
         }
         
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/hero-bg.jpg') no-repeat center center/cover;
+        /* Hero Contato */
+        .hero-contato {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/servico-projetos.jpg') no-repeat center center/cover;
             color: var(--white);
             text-align: center;
             padding: 150px 0 100px;
             margin-top: 80px;
         }
         
-        .hero h1 {
+        .hero-contato h1 {
             font-size: 3rem;
             color: var(--white);
             margin-bottom: 20px;
         }
         
-        .hero p {
+        .hero-contato p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 30px;
         }
         
-        /* Destaques */
-        .highlights {
-            background-color: var(--light-color);
-        }
-        
-        .highlights-grid {
+        /* Contact Container */
+        .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
         }
         
-        .highlight-card {
-            background-color: var(--white);
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: var(--light-color);
             border-radius: 8px;
-            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        .contact-details h3 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-message {
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+        
+        /* Quick Actions */
+        .quick-actions {
+            background-color: var(--light-color);
+            text-align: center;
+        }
+        
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .action-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
-            text-align: center;
-            padding: 30px;
         }
         
-        .highlight-card:hover {
-            transform: translateY(-10px);
+        .action-card:hover {
+            transform: translateY(-5px);
         }
         
-        .highlight-icon {
-            font-size: 3rem;
+        .action-icon {
+            font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 20px;
-        }
-        
-        .highlight-card h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        /* CTA Section */
-        .cta {
-            text-align: center;
-            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
-            color: var(--white);
-        }
-        
-        .cta h2 {
-            color: var(--white);
-        }
-        
-        .cta h2::after {
-            background-color: var(--accent-color);
-        }
-        
-        .cta p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
         }
         
         /* Footer */
@@ -366,7 +434,7 @@
                 font-size: 2rem;
             }
             
-            .hero h1 {
+            .hero-contato h1 {
                 font-size: 2.5rem;
             }
         }
@@ -411,16 +479,20 @@
                 display: block;
             }
             
-            .hero {
+            .hero-contato {
                 padding: 120px 0 80px;
             }
             
-            .hero h1 {
+            .hero-contato h1 {
                 font-size: 2rem;
             }
             
-            .hero p {
+            .hero-contato p {
                 font-size: 1rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -461,55 +533,164 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero-contato">
         <div class="container">
-            <h1>L&R Plantas e Paisagismo</h1>
-            <p>Paisagismo com Excelência. Transformando espaços no DF desde 2015.</p>
-            <a href="https://wa.me/556199958196" target="_blank" class="btn btn-accent">Solicitar Orçamento</a>
+            <h1>Entre em Contato</h1>
+            <p>Estamos prontos para transformar seu espaço. Solicite um orçamento sem compromisso!</p>
+            <a href="#contact" class="btn btn-accent">Fale Conosco Agora</a>
         </div>
     </section>
 
-    <!-- Destaques -->
-    <section class="highlights">
+    <section id="contact" class="contact">
         <div class="container">
-            <h2>Nossos Destaques</h2>
-            <div class="highlights-grid">
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-seedling"></i>
+            <h2>Fale Conosco</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Área de Atuação</h3>
+                            <p>Distrito Federal e entorno</p>
+                            <p><small>Atendemos em todo o DF e cidades próximas</small></p>
+                        </div>
                     </div>
-                    <h3>Serviços Especializados</h3>
-                    <p>Projetos paisagísticos, manutenção de jardins, podas profissionais e muito mais.</p>
-                    <a href="servicos.html" class="btn">Conheça nossos serviços</a>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Telefone/WhatsApp</h3>
+                            <p><a href="https://wa.me/556199958196" target="_blank">+55 61 99995-8196</a></p>
+                            <p><small>Clique para conversar no WhatsApp</small></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>E-mail</h3>
+                            <p><a href="mailto:restaurajardins068@gmail.com">restaurajardins068@gmail.com</a></p>
+                            <p><small>Respondemos em até 24 horas</small></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Horário de Atendimento</h3>
+                            <p>Previamente agendado e negociado</p>
+                            <p><small>Plantões mediante agendamento</small></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Como Funciona</h3>
+                            <p>1. Você entra em contato</p>
+                            <p>2. Agendamos uma visita</p>
+                            <p>3. Apresentamos o orçamento</p>
+                            <p>4. Executamos o serviço</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-images"></i>
-                    </div>
-                    <h3>Portfólio</h3>
-                    <p>Confira nossos trabalhos realizados em residências, empresas e instituições.</p>
-                    <a href="portfolio.html" class="btn">Ver portfólio</a>
-                </div>
-                
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-history"></i>
-                    </div>
-                    <h3>Nossa História</h3>
-                    <p>Mais de 10 anos de experiência transformando espaços através da natureza.</p>
-                    <a href="sobre.html" class="btn">Conheça nossa história</a>
+                <div class="contact-form">
+                    <form id="form-contato">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo *</label>
+                            <input type="text" id="nome" name="nome" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefone">Telefone/WhatsApp *</label>
+                            <input type="tel" id="telefone" name="telefone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cidade">Cidade *</label>
+                            <input type="text" id="cidade" name="cidade" class="form-control" required placeholder="Ex: Brasília, Águas Claras, Taguatinga...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="servico">Serviço de Interesse *</label>
+                            <select id="servico" name="servico" class="form-control" required>
+                                <option value="">Selecione um serviço</option>
+                                <option value="projeto">Projeto Paisagístico</option>
+                                <option value="manutencao">Manutenção de Jardins</option>
+                                <option value="podas">Podas Profissionais</option>
+                                <option value="plantas">Venda de Plantas</option>
+                                <option value="pragas">Controle de Pragas</option>
+                                <option value="adubacao">Adubação</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control" required placeholder="Descreva brevemente sua necessidade, tamanho do espaço, e qualquer informação relevante..."></textarea>
+                        </div>
+                        
+                        <div id="form-message" class="form-message"></div>
+                        
+                        <button type="submit" class="btn" id="submit-btn" style="width: 100%;">
+                            <span id="btn-text">Enviar Mensagem</span>
+                            <div id="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Enviando...
+                            </div>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
+    <section class="quick-actions">
         <div class="container">
-            <h2>Pronto para Transformar seu Espaço?</h2>
-            <p>Entre em contato conosco e solicite um orçamento sem compromisso. Estamos prontos para tornar seu jardim dos sonhos em realidade.</p>
-            <a href="contato.html" class="btn btn-accent">Entre em Contato</a>
+            <h2>Contato Rápido</h2>
+            <p>Escolha a forma mais conveniente para você</p>
+            <div class="actions-grid">
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Conversa direta e rápida</p>
+                    <a href="https://wa.me/556199958196" target="_blank" class="btn">Enviar Mensagem</a>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Ligação</h3>
+                    <p>Atendimento personalizado</p>
+                    <a href="tel:+556199958196" class="btn">Ligar Agora</a>
+                </div>
+                
+                <div class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>E-mail</h3>
+                    <p>Para orçamentos detalhados</p>
+                    <a href="mailto:restaurajardins068@gmail.com" class="btn">Enviar E-mail</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -574,6 +755,72 @@
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
+            });
+        });
+
+        // Formulário de Contato
+        const contactForm = document.getElementById('form-contato');
+        const formMessage = document.getElementById('form-message');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnLoading = document.getElementById('btn-loading');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Mostrar estado de carregamento
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'block';
+                submitBtn.disabled = true;
+                
+                // Coletar dados do formulário
+                const formData = {
+                    nome: document.getElementById('nome').value,
+                    email: document.getElementById('email').value,
+                    telefone: document.getElementById('telefone').value,
+                    cidade: document.getElementById('cidade').value,
+                    servico: document.getElementById('servico').value,
+                    mensagem: document.getElementById('mensagem').value,
+                    data: new Date().toLocaleString('pt-BR')
+                };
+                
+                try {
+                    // Simulando envio (em produção, enviaria para um servidor)
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    const success = true; // Simulando envio bem-sucedido
+                    
+                    if (success) {
+                        formMessage.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em até 24 horas.';
+                        formMessage.classList.remove('error');
+                        formMessage.classList.add('success');
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Falha no envio');
+                    }
+                } catch (error) {
+                    formMessage.textContent = 'Erro ao enviar mensagem. Por favor, tente novamente ou entre em contato diretamente por WhatsApp.';
+                    formMessage.classList.remove('success');
+                    formMessage.classList.add('error');
+                } finally {
+                    btnText.style.display = 'block';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        }
+        
+        // Validação em tempo real
+        const inputs = document.querySelectorAll('.form-control');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '' && this.hasAttribute('required')) {
+                    this.style.borderColor = '#dc3545';
+                } else {
+                    this.style.borderColor = '#ddd';
+                }
             });
         });
     </script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L&R Plantas e Paisagismo | Transformando espaços no DF desde 2015</title>
+    <title>Serviços | L&R Plantas e Paisagismo</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -183,62 +183,132 @@
             cursor: pointer;
         }
         
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/hero-bg.jpg') no-repeat center center/cover;
+        /* Hero Serviços */
+        .hero-services {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/servico-projetos.jpg') no-repeat center center/cover;
             color: var(--white);
             text-align: center;
             padding: 150px 0 100px;
             margin-top: 80px;
         }
         
-        .hero h1 {
+        .hero-services h1 {
             font-size: 3rem;
             color: var(--white);
             margin-bottom: 20px;
         }
         
-        .hero p {
+        .hero-services p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 30px;
         }
         
-        /* Destaques */
-        .highlights {
+        /* Services Grid */
+        .services-detailed {
             background-color: var(--light-color);
         }
         
-        .highlights-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
         
-        .highlight-card {
+        .service-card {
             background-color: var(--white);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
-            text-align: center;
-            padding: 30px;
         }
         
-        .highlight-card:hover {
+        .service-card:hover {
             transform: translateY(-10px);
         }
         
-        .highlight-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
+        .service-img {
+            height: 250px;
+            overflow: hidden;
         }
         
-        .highlight-card h3 {
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
             color: var(--primary-color);
             font-size: 1.5rem;
             margin-bottom: 15px;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-features li:before {
+            content: '✓';
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* Process Section */
+        .process {
+            text-align: center;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
         }
         
         /* CTA Section */
@@ -366,7 +436,7 @@
                 font-size: 2rem;
             }
             
-            .hero h1 {
+            .hero-services h1 {
                 font-size: 2.5rem;
             }
         }
@@ -411,16 +481,20 @@
                 display: block;
             }
             
-            .hero {
+            .hero-services {
                 padding: 120px 0 80px;
             }
             
-            .hero h1 {
+            .hero-services h1 {
                 font-size: 2rem;
             }
             
-            .hero p {
+            .hero-services p {
                 font-size: 1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -461,44 +535,146 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero-services">
         <div class="container">
-            <h1>L&R Plantas e Paisagismo</h1>
-            <p>Paisagismo com Excelência. Transformando espaços no DF desde 2015.</p>
-            <a href="https://wa.me/556199958196" target="_blank" class="btn btn-accent">Solicitar Orçamento</a>
+            <h1>Nossos Serviços</h1>
+            <p>Conheça todos os nossos serviços especializados em paisagismo e jardinagem</p>
+            <a href="#servicos" class="btn btn-accent">Ver Serviços</a>
         </div>
     </section>
 
-    <!-- Destaques -->
-    <section class="highlights">
+    <section id="servicos" class="services-detailed">
         <div class="container">
-            <h2>Nossos Destaques</h2>
-            <div class="highlights-grid">
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-seedling"></i>
+            <h2>Serviços Especializados</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/servico-projetos.jpg" alt="Projetos Paisagísticos">
                     </div>
-                    <h3>Serviços Especializados</h3>
-                    <p>Projetos paisagísticos, manutenção de jardins, podas profissionais e muito mais.</p>
-                    <a href="servicos.html" class="btn">Conheça nossos serviços</a>
+                    <div class="service-content">
+                        <h3>Projetos Paisagísticos</h3>
+                        <p>Criação de jardins personalizados para residências, empresas e instituições.</p>
+                        <ul class="service-features">
+                            <li>Estudo do espaço e solo</li>
+                            <li>Seleção de espécies adequadas</li>
+                            <li>Projeto visual 2D/3D</li>
+                            <li>Orientação para execução</li>
+                        </ul>
+                        <a href="contato.html" class="btn">Solicitar Orçamento</a>
+                    </div>
                 </div>
                 
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-images"></i>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/servico-manutencao.jpg" alt="Manutenção de Jardins">
                     </div>
-                    <h3>Portfólio</h3>
-                    <p>Confira nossos trabalhos realizados em residências, empresas e instituições.</p>
-                    <a href="portfolio.html" class="btn">Ver portfólio</a>
+                    <div class="service-content">
+                        <h3>Manutenção de Jardins</h3>
+                        <p>Cuidados especializados para manter seu jardim sempre bonito e saudável.</p>
+                        <ul class="service-features">
+                            <li>Corte e poda de grama</li>
+                            <li>Controle de pragas e doenças</li>
+                            <li>Adubação e nutrição</li>
+                            <li>Irrigação e drenagem</li>
+                        </ul>
+                        <a href="contato.html" class="btn">Solicitar Orçamento</a>
+                    </div>
                 </div>
                 
-                <div class="highlight-card">
-                    <div class="highlight-icon">
-                        <i class="fas fa-history"></i>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/servico-podas.jpg" alt="Podas Profissionais">
                     </div>
-                    <h3>Nossa História</h3>
-                    <p>Mais de 10 anos de experiência transformando espaços através da natureza.</p>
-                    <a href="sobre.html" class="btn">Conheça nossa história</a>
+                    <div class="service-content">
+                        <h3>Podas Profissionais</h3>
+                        <p>Podas seguras em árvores de até 5m de altura, realizadas por equipe especializada.</p>
+                        <ul class="service-features">
+                            <li>Poda de formação</li>
+                            <li>Poda de segurança</li>
+                            <li>Poda de limpeza</li>
+                            <li>Remoção de árvores</li>
+                        </ul>
+                        <a href="contato.html" class="btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/servico-plantas.jpg" alt="Venda de Plantas">
+                    </div>
+                    <div class="service-content">
+                        <h3>Venda de Plantas</h3>
+                        <p>Plantas ornamentais, substratos e insumos de qualidade para seu jardim.</p>
+                        <ul class="service-features">
+                            <li>Plantas ornamentais</li>
+                            <li>Substratos especiais</li>
+                            <li>Fertilizantes orgânicos</li>
+                            <li>Assessoria técnica</li>
+                        </ul>
+                        <a href="contato.html" class="btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/servico-pragas.jpg" alt="Controle de Pragas">
+                    </div>
+                    <div class="service-content">
+                        <h3>Controle de Pragas</h3>
+                        <p>Tratamento especializado com fungicidas e herbicidas para manter suas plantas saudáveis.</p>
+                        <ul class="service-features">
+                            <li>Identificação de pragas</li>
+                            <li>Controle biológico</li>
+                            <li>Tratamento químico seguro</li>
+                            <li>Prevenção de reinfestação</li>
+                        </ul>
+                        <a href="contato.html" class="btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="assets/servico-adubacao.jpg" alt="Adubação">
+                    </div>
+                    <div class="service-content">
+                        <h3>Adubação</h3>
+                        <p>Nutrição adequada para suas plantas crescerem fortes e saudáveis.</p>
+                        <ul class="service-features">
+                            <li>Análise do solo</li>
+                            <li>Adubação orgânica</li>
+                            <li>Adubação mineral</li>
+                            <li>Fertirrigação</li>
+                        </ul>
+                        <a href="contato.html" class="btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <h2>Como Funciona</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consulta Inicial</h3>
+                    <p>Entendemos suas necessidades e avaliamos o espaço</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Orçamento</h3>
+                    <p>Elaboramos proposta detalhada sem compromisso</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Execução</h3>
+                    <p>Realizamos o serviço com qualidade e prazo combinado</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Manutenção</h3>
+                    <p>Acompanhamento pós-serviço para garantir satisfação</p>
                 </div>
             </div>
         </div>
@@ -508,8 +684,8 @@
     <section class="cta">
         <div class="container">
             <h2>Pronto para Transformar seu Espaço?</h2>
-            <p>Entre em contato conosco e solicite um orçamento sem compromisso. Estamos prontos para tornar seu jardim dos sonhos em realidade.</p>
-            <a href="contato.html" class="btn btn-accent">Entre em Contato</a>
+            <p>Entre em contato conosco e solicite um orçamento sem compromisso</p>
+            <a href="contato.html" class="btn btn-accent">Solicitar Orçamento</a>
         </div>
     </section>
 
